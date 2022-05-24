@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>RahafTringle</title>
+        <link rel="stylesheet" href="rah.css">
+    </head>
+    <body>
+      <script>
+           function triangle(){
+            var x = parseFloat(document.getElementById("id8").value);
+            var y = parseFloat(document.getElementById("id9").value);
+            var z = document.getElementById("id10");
+            var n = (x/2)*y;
+            z.value = n.toString();
+            }
+        function drowTriangle(){
+            var c = document.getElementById("can4");
+            var can = c.getContext("2d");
+            can.clearRect(0, 0, 5000, 5000);
+            var x = parseFloat(document.getElementById("id8").value);
+            var y = parseFloat(document.getElementById("id9").value);
+            can.beginPath();
+            can.moveTo(0,0);
+            can.lineTo(0,x*8);
+            can.lineTo(y*8,y*8);
+            can.lineTo(0,0);
+            can.fill();
+        }
+    </script>
+    <div>
+        <canvas id="can4" width="500" height="500" style="border: 1px solid #fff;"></canvas><br>
+        <input type="text" placeholder="أدخل طول القاعدة" id="id8" inputmode="numeric" /><br>
+        <input type="text" placeholder="أدخل الإرتفاع" id="id9" inputmode="numeric" /><br>
+        <input type="text" disabled value="المساحة" id="id10" /><br>
+        <input type="button" id="triangle" onclick="triangle();" value="triangle" />
+        <input type="button" id="drowtriangle" onclick="drowTriangle();" value="Drow" />
+    
+    </div>
+    <div>
+        <button> <a href="index.html"><b>back</b></a></button>
+    </div>
+    </body>
+</html>

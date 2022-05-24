@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>RahafCirc</title>
+        <link rel="stylesheet" href="r.css">
+    </head>
+    <body>
+      <script>
+            function circle() {
+            var x = parseFloat(document.getElementById("id6").value);
+            var z = document.getElementById("id7");
+            var n = x * x * 3.14;
+            z.value = n.toString();
+
+        }
+        function roundcirc(){
+            var x = parseFloat(document.getElementById("id6").value);
+            var r= document.getElementById("id17");
+            var round = 2* 3.14 * x; 
+            r.value = round.toString();   
+        }
+        function drowcirc(){
+            var c = document.getElementById("can3");
+            var can = c.getContext("2d");
+            can.clearRect(0, 0, 5000, 5000);
+            var x = parseFloat(document.getElementById("id6").value);
+            var centX = c.clientHeight / 2;
+            var centy = c.clientWidth / 2;
+            can.beginPath();
+            can.arc(centX, centy,5*x,0,2*Math.PI,false);
+            can.fill();
+        }
+    </script>
+    <div>
+        <canvas id="can3" width="500" height="500" style="border: 1px solid #fff;"></canvas><br>
+        <input type="text" id="id6" placeholder="أدخل طول نصف القطر" inputmode="numeric" /><br>
+        <input type="text" disabled value="المساحة" id="id7" /><br>
+        <input type="text" disabled value="المحيط" id="id17" /><br>
+        <input type="button" id="circ" onclick="circle();" value="circle" />
+        <input type="button" id="roundcirc" onclick="roundcirc();" value="round" />
+        <input type="button" id="Drowcirc" onclick="drowcirc();" value="Drow" />
+    </div>
+    <div>
+        <button> <a href="index.html"><b>back</b></a></button>
+    </div>
+    </body>
+</html>

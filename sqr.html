@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>RahafSqr</title>
+        <link rel="stylesheet" href="r.css">
+    </head>
+    <body>
+      <script>
+        function sqr() {
+            var x = parseFloat(document.getElementById("id4").value);
+            var z = document.getElementById("id5");
+            var n = x * x;
+            z.value = n.toString();
+               
+               
+        }
+        function roundSqr(){
+            var x = parseFloat(document.getElementById("id4").value);
+            var r = document.getElementById("id15");
+            var round = x*4;
+            r.value = round.toString();
+        }
+        function drowSqr(){
+            var c = document.getElementById("can2");
+            var can = c.getContext("2d");
+            can.clearRect(0, 0, 5000, 5000);
+            var x = parseFloat(document.getElementById("id4").value);
+            can.fillStyle = "#ff0000";
+            can.fillRect(0, 0, 5 * x, 5 * x);
+        }
+       </Script>
+        <div>
+            <canvas id="can2" width="500" height="500" style="border: 1px solid #fff;"></canvas><br>
+            <input type="text" placeholder="أدخل طول الضلع" id="id4" inputmode="numeric" /><br>
+            <input type="text" disabled value="المساحة" id="id5" /><br>
+            <input type="text" disabled value="المحيط" id="id15" /><br>
+            <input type="button" id="sqr" onclick="sqr();" value="squair" />
+            <input type="button" id="roundSqr" onclick="roundSqr();" value="Round" />
+            <input type="button" id="drowSqr" onclick="drowSqr();" value="Drow" />
+        </div>
+        <div>
+            <button> <a href="index.html"><b>back</b></a></button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>RahafRect</title>
+        <link rel="stylesheet" href="r.css">
+    </head>
+    <body>
+        <script>
+            function rect() {
+                var x = parseFloat(document.getElementById("id1").value);
+                var y = parseFloat(document.getElementById("id2").value);
+
+                var z = document.getElementById("id3");
+                var n = x * y;
+                z.value = n.toString();
+            }
+            function roundRect(){
+                var x = parseFloat(document.getElementById("id1").value);
+                var y = parseFloat(document.getElementById("id2").value);
+                var round = document.getElementById("id13");
+                var r = (x+y)*2;
+                round.value=r.toString();
+            }
+            function drowRect(){
+                var c = document.getElementById("can1");
+                var can = c.getContext("2d");
+                can.clearRect(0, 0, 5000, 5000);
+                var x = parseFloat(document.getElementById("id1").value);
+                var y = parseFloat(document.getElementById("id2").value);
+                can.fillStyle = "#ff0000";
+                can.fillRect(0, 0, 5 * x, 5 * y);
+
+            }
+        </script>
+        <div>
+            <canvas id="can1" width="500" height="500" style="border: 4px solid  #fff;" ></canvas><br>
+            <input type="text" placeholder="أدخل الطول" id="id1" inputmode="numeric" /><br>
+            <input type="text" placeholder="أدخل العرض" id="id2" inputmode="numeric" /><br>
+            <input type="text" disabled value="المساحة" id="id3" /><br>
+            <input type="text" disabled value="المحيط" id="id13" /><br>
+            <input type="button" id="rect" onclick="rect();" value="rect" />
+            <input type="button" id="roundRect" onclick="roundRect();" value="round" />
+            <input type="button" id="Drow" onclick="drowRect();"value="Drow">
+
+        </div>
+        <div>
+            <button> <a href="index.html"><b>back</b></a></button>
+        </div>
+    </body>
+</html>
